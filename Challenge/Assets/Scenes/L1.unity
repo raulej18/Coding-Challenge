@@ -190,10 +190,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generates:
   - {fileID: 146946, guid: e7fdd5d3767b47b4e9c6b0d8f0727c4d, type: 2}
-  - {fileID: 146946, guid: e7fdd5d3767b47b4e9c6b0d8f0727c4d, type: 2}
-  - {fileID: 146946, guid: e7fdd5d3767b47b4e9c6b0d8f0727c4d, type: 2}
-  - {fileID: 146946, guid: e7fdd5d3767b47b4e9c6b0d8f0727c4d, type: 2}
-  - {fileID: 146946, guid: e7fdd5d3767b47b4e9c6b0d8f0727c4d, type: 2}
+  - {fileID: 114648, guid: 6c4753057f0d58e44aec86605bc0c205, type: 2}
+  - {fileID: 157042, guid: 8408390fa6621d04684816f2c711aec0, type: 2}
+  - {fileID: 157042, guid: 8408390fa6621d04684816f2c711aec0, type: 2}
+  - {fileID: 157042, guid: 8408390fa6621d04684816f2c711aec0, type: 2}
   mount: 0a000000140000001e0000002800000032000000
   total: 50
 --- !u!1 &1820840637
@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet1: {fileID: 138064, guid: 911188ab043f43c4b8b4cfab002165ef, type: 2}
+  bullet2: {fileID: 157220, guid: 90cc18fed988abb46ad07f9c181b0b4b, type: 2}
 --- !u!1 &2067014847
 GameObject:
   m_ObjectHideFlags: 0

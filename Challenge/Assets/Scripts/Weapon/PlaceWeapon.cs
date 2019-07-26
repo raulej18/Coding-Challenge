@@ -5,9 +5,13 @@ public class PlaceWeapon : MonoBehaviour {
 	private bool itIsCharged;
 	private Transform positionFire;
 	private string nameWeapon;
+
 	public GameObject bullet1;
+	public GameObject bullet2;
+	private GameObject bulletSelected;
 
 	private float time;
+	private float speedBullet;
 	// Use this for initialization
 	void Start () {
 		
@@ -25,6 +29,16 @@ public class PlaceWeapon : MonoBehaviour {
 		itIsCharged=true;
 		nameWeapon=transform.GetChild(0).name;
 		positionFire=transform.GetChild(0).GetChild(0).transform;
+		if (nameWeapon == "Pistol(Clone)(Clone)") {
+			bulletSelected=bullet1;
+			speedBullet = 0.3f;	
+		} else if (nameWeapon == "MachineGun(Clone)(Clone)") {
+			bulletSelected=bullet1;
+			speedBullet = 0.1f;
+		} else if (nameWeapon == "Bazooka(Clone)(Clone)") {
+			speedBullet=0.2f;
+			bulletSelected=bullet2;
+		}
 
 	}
 	public bool GetItIsCharged(){
@@ -32,15 +46,12 @@ public class PlaceWeapon : MonoBehaviour {
 
 	}
 	public void shot(){
-		if(nameWeapon=="Pistol(Clone)(Clone)"){
-			if(time<0.3f){
-				time+=Time.deltaTime;
-			}
-			else{
-				time=0;
-				GameObject b=Instantiate(bullet1,positionFire.position,transform.parent.rotation)as GameObject;
-			}
-
+		if(time<speedBullet){
+			time+=Time.deltaTime;
+		}
+		else{
+			time=0;
+			GameObject b=Instantiate(bulletSelected,positionFire.position,transform.parent.rotation)as GameObject;
 		}
 
 	}
