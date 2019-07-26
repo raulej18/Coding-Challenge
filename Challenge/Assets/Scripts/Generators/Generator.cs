@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GenerateWeapons : MonoBehaviour {
+public class Generator : MonoBehaviour {
 	public GameObject[] generates;
 	public int[] mount;
 	public int total;

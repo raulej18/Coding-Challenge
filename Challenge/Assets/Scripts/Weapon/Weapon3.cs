@@ -15,9 +15,21 @@ public class Weapon3 : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other){
 		
-		if(other.name=="Soldier"&&!position.GetItIsCharged()){
-			position.CreateWeapon(gameObject);
-			Destroy (gameObject);
-		}
+		if (other.name == "Soldier") {
+			if(position.GetItIsCharged()){
+				if(position.ReturnCurrentWeapon().name!="Bazooka(Clone)(Clone)"){
+					Destroy (position.ReturnCurrentWeapon());
+					position.CreateWeapon (gameObject);
+					Destroy (gameObject);
+				}
+				
+				
+			}
+			else{
+				position.CreateWeapon (gameObject);
+				Destroy (gameObject);
+			}
+			
+		} 
 	}
 }

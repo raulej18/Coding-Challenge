@@ -5,10 +5,12 @@ public class PlaceWeapon : MonoBehaviour {
 	private bool itIsCharged;
 	private Transform positionFire;
 	private string nameWeapon;
+	private GameObject currentWeapon;
 
 	public GameObject bullet1;
 	public GameObject bullet2;
 	private GameObject bulletSelected;
+
 
 	private float time;
 	private float speedBullet;
@@ -25,6 +27,7 @@ public class PlaceWeapon : MonoBehaviour {
 
 	public void CreateWeapon(GameObject w){
 		GameObject weapon=Instantiate(w,transform.position,transform.parent.rotation)as GameObject;
+		currentWeapon = weapon;
 		weapon.transform.parent=transform;
 		itIsCharged=true;
 		nameWeapon=transform.GetChild(0).name;
@@ -40,6 +43,9 @@ public class PlaceWeapon : MonoBehaviour {
 			bulletSelected=bullet2;
 		}
 
+	}
+	public GameObject ReturnCurrentWeapon(){
+		return  currentWeapon;
 	}
 	public bool GetItIsCharged(){
 		return itIsCharged;

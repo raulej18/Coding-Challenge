@@ -12,7 +12,7 @@ public class MovEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		changeTime = Random.Range (3,15);	
+			
 
 	}
 	
@@ -35,11 +35,11 @@ public class MovEnemy : MonoBehaviour {
 
 	}
 	private void GenerateDirection(){
-		direction = new Vector2 (Random.Range (1, 49), Random.Range (1, 49));
+		direction = new Vector2 (Random.Range (10, 140), Random.Range (10, 140));
 		Vector2 aux = direction;
 		aux= new Vector2 (aux.x-transform.position.x,aux.y-transform.position.y);
 		transform.up = aux;
 		directionUpdate = true;
-
+		changeTime = Random.Range (3,20);
 	}
 }
