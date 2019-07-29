@@ -44,11 +44,6 @@ public class MovEnemy : MonoBehaviour {
 
 	}
 
-	public void UpdatePosition(Transform pos){
-		Vector2 aux = pos.position;
-		aux= new Vector2 (aux.x-transform.position.x,aux.y-transform.position.y);
-		transform.up = aux;
-	}
 	public void GenerateDirection(){
 		direction = new Vector2 (Random.Range (10, 140), Random.Range (10, 140));
 		Vector2 aux = direction;

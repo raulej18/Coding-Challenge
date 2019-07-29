@@ -4,7 +4,6 @@ using System.Collections;
 public class PlaceWeapon : MonoBehaviour {
 	private bool itIsCharged;
 	private Transform positionFire;
-	private string nameWeapon;
 	private GameObject currentWeapon;
 
 	public GameObject bullet1;
@@ -42,23 +41,25 @@ public class PlaceWeapon : MonoBehaviour {
 	public void CreateWeapon(GameObject w){
 		GameObject weapon=Instantiate(w,transform.position,transform.parent.rotation)as GameObject;
 		currentWeapon = weapon;
-		weapon.transform.parent=transform;
-		itIsCharged=true;
-		nameWeapon=weapon.name;
-		positionFire=weapon.GetComponent<Transform>().GetChild(0).transform;
-		if (nameWeapon == "Pistol(Clone)(Clone)") {
+		if (currentWeapon.name == "Pistol(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.3f;	
-
-		} else if (nameWeapon == "MachineGun(Clone)(Clone)") {
+			weapon.GetComponent<Weapon1>().SetInUse(true);
+			
+		} else if (currentWeapon.name == "MachineGun(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.1f;
-
-		} else if (nameWeapon == "Bazooka(Clone)(Clone)") {
+			weapon.GetComponent<Weapon2>().SetInUse(true);
+			
+		} else if (currentWeapon.name == "Bazooka(Clone)(Clone)") {
 			speedBullet=0.2f;
 			bulletSelected=bullet2;
-
+			weapon.GetComponent<Weapon3>().SetInUse(true);
 		}
+		weapon.transform.parent=transform;
+		itIsCharged=true;
+		positionFire=weapon.GetComponent<Transform>().GetChild(0).transform;
+
 
 	}
 	public GameObject ReturnCurrentWeapon(){

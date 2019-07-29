@@ -16,7 +16,7 @@ public class AttackEne : MonoBehaviour {
 	private SearchWeaponAndEne position;
 
 	void Start(){
-		bullets=new GameObject[2];
+
 		bullets=GameObject.Find("EnemyGenerator").GetComponent<Bullets>().GetBullets();
 		position=transform.GetChild(0).GetComponent<SearchWeaponAndEne>();
 
@@ -24,11 +24,6 @@ public class AttackEne : MonoBehaviour {
 
 	void Update(){
 		if(charged){
-			if(currentWeapon==null){
-
-			}
-			else{
-			}
 			if(shootTime<speedShoot){
 				shootTime+=Time.deltaTime;
 				
@@ -55,31 +50,34 @@ public class AttackEne : MonoBehaviour {
 		return charged;
 	}
 	private void ShootWeapon(){
-		bulletPosition=currentWeapon.transform.GetChild(0);
-		GameObject bullet=Instantiate(bulletW,bulletPosition.position,bulletPosition.rotation)as GameObject;
+		if (currentWeapon != null) {
+			bulletPosition=currentWeapon.transform.GetChild(0);
+			GameObject bullet=Instantiate(bulletW,bulletPosition.position,bulletPosition.rotation)as GameObject;
+
+		}
 
 
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if(!charged&&other.tag=="Weapon"){
-			GameObject arma=Instantiate(other.gameObject,transform.GetChild(0).position,transform.rotation)as GameObject;
-			arma.transform.parent=transform.GetChild(0);
-			currentWeapon=arma;
-			currentWeapon.tag = "Untagged";
-			charged=true;
-			if(currentWeapon.name=="Bazooka(Clone)(Clone)"){
-				speedShoot=0.2f;
-				bulletW=bullets[1];
+	public void CreateWeapon(GameObject weapon){
+		if (weapon != null) {
+			GameObject arma = Instantiate (weapon.gameObject, transform.GetChild (0).position, transform.rotation)as GameObject;
+			arma.transform.parent = transform.GetChild (0);
+			currentWeapon = arma;
+			if (currentWeapon.name == "Bazooka(Clone)(Clone)") {
+				speedShoot = 0.2f;
+				bulletW = bullets [1];
+				arma.GetComponent<Weapon3> ().SetInUse (true);
+			} else if (currentWeapon.name == "MachineGun(Clone)(Clone)") {
+				speedShoot = 0.1f;
+				bulletW = bullets [0];
+				arma.GetComponent<Weapon2> ().SetInUse (true);
+			} else {
+				speedShoot = 0.3f;
+				bulletW = bullets [0];
+				arma.GetComponent<Weapon1> ().SetInUse (true);
 			}
-			else if(currentWeapon.name=="MachineGun(Clone)(Clone)"){
-				speedShoot=0.1f;
-				bulletW=bullets[0];
-			}
-			else{
-				speedShoot=0.3f;
-				bulletW=bullets[0];
-			}
+			charged = true;
 
 		}
 	}

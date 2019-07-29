@@ -15,29 +15,31 @@ public class Weapon1 : MonoBehaviour {
 	void Update () {
 
 	}
-	public bool GetInUse(){
-		return inUse;
+	public void SetInUse(bool value){
+		inUse = value;
 	}
 	void OnTriggerEnter2D(Collider2D other){
+		if (!inUse) {
+			if (other.name == "Soldier") {
+				if (position.GetItIsCharged ()) {
+					if (position.ReturnCurrentWeapon ().name != "Pistol(Clone)(Clone)") {
+						Destroy (position.ReturnCurrentWeapon ());
+						position.CreateWeapon (gameObject);
+						Destroy(gameObject);
+					}
+				
+				
+				} else {
 
-		if (other.name == "Soldier") {
-			if(position.GetItIsCharged()){
-				if(position.ReturnCurrentWeapon().name!="Pistol(Clone)(Clone)"){
-					Destroy (position.ReturnCurrentWeapon());
-					inUse=true;
 					position.CreateWeapon (gameObject);
-					Destroy (gameObject);
+					Destroy(gameObject);
 				}
-				
-				
-			}
-			else{
-				inUse=true;
-				position.CreateWeapon (gameObject);
-				Destroy (gameObject);
-			}
 			
-		}
+			} else if (other.name == "Ene") {
+				other.GetComponent<AttackEne> ().CreateWeapon (gameObject);
+				Destroy(gameObject);
+			}
 
+		}
 	}
 }
