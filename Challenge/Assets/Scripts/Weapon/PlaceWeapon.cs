@@ -13,7 +13,11 @@ public class PlaceWeapon : MonoBehaviour {
 
 
 	private float time;
+	private float timeWeapon;
 	private float speedBullet;
+
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,7 +25,17 @@ public class PlaceWeapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(itIsCharged){
+			if(timeWeapon<5){
+				timeWeapon+=Time.deltaTime;
 
+			}
+			else{
+				timeWeapon=0;
+				Destroy(currentWeapon);
+				itIsCharged=false;
+			}
+		}
 	}
 
 
@@ -30,17 +44,20 @@ public class PlaceWeapon : MonoBehaviour {
 		currentWeapon = weapon;
 		weapon.transform.parent=transform;
 		itIsCharged=true;
-		nameWeapon=transform.GetChild(0).name;
-		positionFire=transform.GetChild(0).GetChild(0).transform;
+		nameWeapon=weapon.name;
+		positionFire=weapon.GetComponent<Transform>().GetChild(0).transform;
 		if (nameWeapon == "Pistol(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.3f;	
+
 		} else if (nameWeapon == "MachineGun(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.1f;
+
 		} else if (nameWeapon == "Bazooka(Clone)(Clone)") {
 			speedBullet=0.2f;
 			bulletSelected=bullet2;
+
 		}
 
 	}
