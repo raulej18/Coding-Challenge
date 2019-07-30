@@ -25,7 +25,7 @@ public class PlaceWeapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(itIsCharged){
-			if(timeWeapon<5){
+			if(timeWeapon<10){
 				timeWeapon+=Time.deltaTime;
 
 			}
@@ -38,23 +38,23 @@ public class PlaceWeapon : MonoBehaviour {
 	}
 
 
-	public void CreateWeapon(GameObject w){
-		GameObject weapon=Instantiate(w,transform.position,transform.parent.rotation)as GameObject;
+	public void CreateWeapon(GameObject wGenerate){
+		GameObject weapon=Instantiate(wGenerate,transform.position,transform.parent.rotation)as GameObject;
 		currentWeapon = weapon;
 		if (currentWeapon.name == "Pistol(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.3f;	
-			weapon.GetComponent<Weapon1>().SetInUse(true);
+
 			
 		} else if (currentWeapon.name == "MachineGun(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.1f;
-			weapon.GetComponent<Weapon2>().SetInUse(true);
+
 			
 		} else if (currentWeapon.name == "Bazooka(Clone)(Clone)") {
 			speedBullet=0.2f;
 			bulletSelected=bullet2;
-			weapon.GetComponent<Weapon3>().SetInUse(true);
+
 		}
 		weapon.transform.parent=transform;
 		itIsCharged=true;
