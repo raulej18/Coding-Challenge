@@ -30,6 +30,7 @@ GameObject:
   - 4: {fileID: 487380}
   - 58: {fileID: 5856494}
   - 50: {fileID: 5026014}
+  - 114: {fileID: 11416510}
   m_Layer: 0
   m_Name: SearchRadius
   m_TagString: Untagged
@@ -202,6 +203,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c97dd55b330cd345ac11c904758d91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 11416510}
+--- !u!114 &11416510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77204eaa8ae2cd94195785ee88cf87ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11437886

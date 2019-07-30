@@ -40,8 +40,8 @@ public class w3 : MonoBehaviour {
 		
 	}
 	private void ChangePosition(){
-		int x = Random.Range (2,48);
-		int y = Random.Range (2, 48);
+		int x = Random.Range (10,140);
+		int y = Random.Range (10, 140);
 		transform.position = new Vector3 (x,y,transform.position.z);
 	}
 }

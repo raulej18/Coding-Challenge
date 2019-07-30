@@ -18,7 +18,6 @@ public class AttackEne : MonoBehaviour {
 	void Start(){
 		bullets = GameObject.Find ("Weapon Generator").GetComponent<Bullets> ().GetBullets ();
 
-
 	}
 
 	void Update(){
@@ -64,7 +63,6 @@ public class AttackEne : MonoBehaviour {
 		GameObject arma=Instantiate(wGenerate,transform.GetChild(0).position,transform.rotation)as GameObject;
 		arma.transform.parent=transform.GetChild(0);
 		currentWeapon=arma;
-		charged=true;
 		if(currentWeapon.name=="Bazooka(Clone)(Clone)"){
 			speedShoot=0.2f;
 			bulletW=bullets[1];
@@ -80,6 +78,8 @@ public class AttackEne : MonoBehaviour {
 			bulletW=bullets[0];
 			currentWeapon.GetComponent<w1>().SetInUse(true);
 		}
+		charged=true;
+
 	}
 
 
