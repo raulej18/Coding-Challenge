@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 402668}
   - 212: {fileID: 21219122}
   - 61: {fileID: 6139754}
-  - 114: {fileID: 11489984}
+  - 114: {fileID: 11410804}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Weapon
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_Offset: {x: -.0145034529, y: .0778656155}
   serializedVersion: 2
   m_Size: {x: .241557866, y: .231987923}
---- !u!114 &11489984
+--- !u!114 &11410804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 146946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb3f6304a3c4fb49b89f49d27d5774e, type: 3}
+  m_Script: {fileID: 11500000, guid: 44954b4c66a4c284c8720a198b3b6940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21219122

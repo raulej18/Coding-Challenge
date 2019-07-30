@@ -13,74 +13,72 @@ public class AttackEne : MonoBehaviour {
 	private float speedShoot;
 	private GameObject bulletW;
 
-	private SearchWeaponAndEne position;
+
 
 	void Start(){
-		bullets=new GameObject[2];
-		bullets=GameObject.Find("EnemyGenerator").GetComponent<Bullets>().GetBullets();
-		position=transform.GetChild(0).GetComponent<SearchWeaponAndEne>();
+		bullets = GameObject.Find ("Weapon Generator").GetComponent<Bullets> ().GetBullets ();
+
 
 	}
 
 	void Update(){
 		if(charged){
-			if(currentWeapon==null){
+			ControlLife();
+			ShootWeapon();
 
-			}
-			else{
-			}
-			if(shootTime<speedShoot){
-				shootTime+=Time.deltaTime;
-				
-			}
-			else{
-				shootTime=0;
-				ShootWeapon();
-			}
-
-			if(time<5){
-				time+=Time.deltaTime;
-
-
-			}
-			else{
-				time=0;
-				charged=false;
-				Destroy(currentWeapon);
-
-			}
 		}
 	}
 	public bool IsCharged(){
 		return charged;
 	}
-	private void ShootWeapon(){
-		bulletPosition=currentWeapon.transform.GetChild(0);
-		GameObject bullet=Instantiate(bulletW,bulletPosition.position,bulletPosition.rotation)as GameObject;
 
+	private void ShootWeapon(){
+		if(shootTime<speedShoot){
+			shootTime+=Time.deltaTime;
+			
+		}
+		else{
+			shootTime=0;
+			bulletPosition=currentWeapon.transform.GetChild(0);
+			GameObject bullet=Instantiate(bulletW,bulletPosition.position,bulletPosition.rotation)as GameObject;
+		}
 
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if(!charged&&other.tag=="Weapon"){
-			GameObject arma=Instantiate(other.gameObject,transform.GetChild(0).position,transform.rotation)as GameObject;
-			arma.transform.parent=transform.GetChild(0);
-			currentWeapon=arma;
-			currentWeapon.tag = "Untagged";
-			charged=true;
-			if(currentWeapon.name=="Bazooka(Clone)(Clone)"){
-				speedShoot=0.2f;
-				bulletW=bullets[1];
-			}
-			else if(currentWeapon.name=="MachineGun(Clone)(Clone)"){
-				speedShoot=0.1f;
-				bulletW=bullets[0];
-			}
-			else{
-				speedShoot=0.3f;
-				bulletW=bullets[0];
-			}
+	private void ControlLife(){
+		if(time<5){
+			time+=Time.deltaTime;
+			
+			
+		}
+		else{
+			time=0;
+			charged=false;
+			Destroy(currentWeapon);
+			
+		}
+	}
 
+
+	public void CreateWeapon(GameObject wGenerate){
+		GameObject arma=Instantiate(wGenerate,transform.GetChild(0).position,transform.rotation)as GameObject;
+		arma.transform.parent=transform.GetChild(0);
+		currentWeapon=arma;
+		charged=true;
+		if(currentWeapon.name=="Bazooka(Clone)(Clone)"){
+			speedShoot=0.2f;
+			bulletW=bullets[1];
+			currentWeapon.GetComponent<w3>().SetInUse(true);
+		}
+		else if(currentWeapon.name=="MachineGun(Clone)(Clone)"){
+			speedShoot=0.1f;
+			bulletW=bullets[0];
+			currentWeapon.GetComponent<w2>().SetInUse(true);
+		}
+		else{
+			speedShoot=0.3f;
+			bulletW=bullets[0];
+			currentWeapon.GetComponent<w1>().SetInUse(true);
 		}
 	}
 

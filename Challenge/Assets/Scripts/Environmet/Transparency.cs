@@ -14,10 +14,12 @@ public class Transparency : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.name=="Soldier"){
-			GetComponent<SpriteRenderer>().color=new Color(1,1,1,0.5f);
+		if (other.name == "Soldier") {
+			GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0.5f);
 
 
+		} else if (other.tag == "Ene") {
+			GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1, 0.5f);
 		}
 
 	}

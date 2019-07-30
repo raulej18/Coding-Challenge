@@ -130,6 +130,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 139584, guid: 632b5927f4db2a847bb289e30538dcdd, type: 2}
+      propertyPath: m_Name
+      value: WeaponSoldier
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 632b5927f4db2a847bb289e30538dcdd, type: 2}
   m_IsPrefabParent: 0
@@ -142,7 +146,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1735818974}
   - 114: {fileID: 1735818973}
-  - 114: {fileID: 1735818975}
   m_Layer: 0
   m_Name: EnemyGenerator
   m_TagString: Untagged
@@ -179,20 +182,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &1735818975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1735818972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d44a3c95237d88a42879bcf9bb9edea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 138064, guid: 911188ab043f43c4b8b4cfab002165ef, type: 2}
-  - {fileID: 157220, guid: 90cc18fed988abb46ad07f9c181b0b4b, type: 2}
 --- !u!1 &1812058691
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +191,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1812058692}
   - 114: {fileID: 1812058693}
+  - 114: {fileID: 1812058694}
   m_Layer: 0
   m_Name: Weapon Generator
   m_TagString: Untagged
@@ -240,6 +230,20 @@ MonoBehaviour:
   - {fileID: 157042, guid: 8408390fa6621d04684816f2c711aec0, type: 2}
   mount: 0a000000140000001e0000002800000032000000
   total: 50
+--- !u!114 &1812058694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812058691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96c59eaa033d3a428679ee2abb65ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 138064, guid: 911188ab043f43c4b8b4cfab002165ef, type: 2}
+  - {fileID: 157220, guid: 90cc18fed988abb46ad07f9c181b0b4b, type: 2}
 --- !u!1 &1820840637
 GameObject:
   m_ObjectHideFlags: 0

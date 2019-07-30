@@ -26,10 +26,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 436894}
   - 212: {fileID: 21288462}
-  - 114: {fileID: 11405538}
   - 58: {fileID: 5894366}
   - 50: {fileID: 5053692}
-  - 114: {fileID: 11416900}
+  - 114: {fileID: 11412174}
+  - 114: {fileID: 11444402}
   m_Layer: 0
   m_Name: Ene2
   m_TagString: Ene
@@ -47,7 +47,6 @@ GameObject:
   - 4: {fileID: 455254}
   - 58: {fileID: 5846758}
   - 50: {fileID: 5045246}
-  - 114: {fileID: 11434952}
   m_Layer: 0
   m_Name: SearchRadius
   m_TagString: Untagged
@@ -194,7 +193,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &11405538
+--- !u!114 &11412174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -202,10 +201,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 120450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724cd5f4ed8dda54c97ce36181917967, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c97dd55b330cd345ac11c904758d91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11416900
+--- !u!114 &11444402
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -213,18 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 120450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e5d3f3bdb8b734a9f137d721b0980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11434952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0f10de903b58a418bec710a7c565eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 388025b325ee25f4da0827097fd9ffd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21288462

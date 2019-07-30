@@ -49,33 +49,24 @@ public class PlaceWeapon : MonoBehaviour {
 		if (nameWeapon == "Pistol(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.3f;	
+			currentWeapon.GetComponent<w1>().SetInUse(true);
 
-<<<<<<< HEAD
 			
 		} else if (currentWeapon.name == "MachineGun(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.1f;
-
+			currentWeapon.GetComponent<w2>().SetInUse(true);
 			
 		} else if (currentWeapon.name == "Bazooka(Clone)(Clone)") {
 			speedBullet=0.2f;
 			bulletSelected=bullet2;
-
+			currentWeapon.GetComponent<w3>().SetInUse(true);
 		}
 		weapon.transform.parent=transform;
 		itIsCharged=true;
 		positionFire=weapon.GetComponent<Transform>().GetChild(0).transform;
-=======
-		} else if (nameWeapon == "MachineGun(Clone)(Clone)") {
-			bulletSelected=bullet1;
-			speedBullet = 0.1f;
 
-		} else if (nameWeapon == "Bazooka(Clone)(Clone)") {
-			speedBullet=0.2f;
-			bulletSelected=bullet2;
->>>>>>> parent of 16fd046... ShootSolved
 
-		}
 
 	}
 	public GameObject ReturnCurrentWeapon(){

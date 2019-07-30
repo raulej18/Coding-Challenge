@@ -11,14 +11,9 @@ public class MovEnemy : MonoBehaviour {
 	private int changeTime;
 	private float time;
 
-
-	private SearchWeaponAndEne position;
-
-
-
 	// Use this for initialization
 	void Start () {
-		position=transform.GetChild(0).GetComponent<SearchWeaponAndEne>();
+
 
 
 	}
