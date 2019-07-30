@@ -14,6 +14,7 @@ public class Weapon2 : MonoBehaviour {
 	void Update () {
 		
 	}
+<<<<<<< HEAD
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.name == "Soldier") {
@@ -36,7 +37,33 @@ public class Weapon2 : MonoBehaviour {
 				other.GetComponent<AttackEne>().createWeapon(gameObject);
 				NewPosition();
 			}
+=======
+	public bool GetInUse(){
+		return inUse;
+	}
+
+	void OnTriggerEnter2D(Collider2D other){
+
+		if (other.name == "Soldier") {
+			if(position.GetItIsCharged()){
+				if(position.ReturnCurrentWeapon().name!="MachineGun(Clone)(Clone)"){
+					Destroy (position.ReturnCurrentWeapon());
+					inUse=true;
+					position.CreateWeapon (gameObject);
+					Destroy (gameObject);
+				}
+
+
+			}
+			else{
+				inUse=true;
+				position.CreateWeapon (gameObject);
+				Destroy (gameObject);
+			}
+
+>>>>>>> parent of 16fd046... ShootSolved
 		}
+
 	}
 	private void NewPosition(){
 		int x = Random.Range (2,48);

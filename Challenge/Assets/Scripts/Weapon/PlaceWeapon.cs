@@ -4,6 +4,7 @@ using System.Collections;
 public class PlaceWeapon : MonoBehaviour {
 	private bool itIsCharged;
 	private Transform positionFire;
+	private string nameWeapon;
 	private GameObject currentWeapon;
 
 	public GameObject bullet1;
@@ -41,10 +42,15 @@ public class PlaceWeapon : MonoBehaviour {
 	public void CreateWeapon(GameObject wGenerate){
 		GameObject weapon=Instantiate(wGenerate,transform.position,transform.parent.rotation)as GameObject;
 		currentWeapon = weapon;
-		if (currentWeapon.name == "Pistol(Clone)(Clone)") {
+		weapon.transform.parent=transform;
+		itIsCharged=true;
+		nameWeapon=weapon.name;
+		positionFire=weapon.GetComponent<Transform>().GetChild(0).transform;
+		if (nameWeapon == "Pistol(Clone)(Clone)") {
 			bulletSelected=bullet1;
 			speedBullet = 0.3f;	
 
+<<<<<<< HEAD
 			
 		} else if (currentWeapon.name == "MachineGun(Clone)(Clone)") {
 			bulletSelected=bullet1;
@@ -59,7 +65,17 @@ public class PlaceWeapon : MonoBehaviour {
 		weapon.transform.parent=transform;
 		itIsCharged=true;
 		positionFire=weapon.GetComponent<Transform>().GetChild(0).transform;
+=======
+		} else if (nameWeapon == "MachineGun(Clone)(Clone)") {
+			bulletSelected=bullet1;
+			speedBullet = 0.1f;
 
+		} else if (nameWeapon == "Bazooka(Clone)(Clone)") {
+			speedBullet=0.2f;
+			bulletSelected=bullet2;
+>>>>>>> parent of 16fd046... ShootSolved
+
+		}
 
 	}
 	public GameObject ReturnCurrentWeapon(){
