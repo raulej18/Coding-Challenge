@@ -37,7 +37,7 @@ public class Generator : MonoBehaviour {
 	private void Generate(GameObject b){
 		int x = Random.Range (2,48);
 		int y = Random.Range (2, 48);
-		GameObject baseP=Instantiate(b,new Vector3((x*3)+2,(y*3)+2,-3),Quaternion.identity)as GameObject;
+		GameObject baseP=Instantiate(b,new Vector3((x*3)+2,(y*3)+2,0),Quaternion.identity)as GameObject;
 		baseP.transform.parent = transform;
 	}
 

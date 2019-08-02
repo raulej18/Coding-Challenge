@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21281848}
   - 114: {fileID: 11465344}
   - 58: {fileID: 5891826}
+  - 114: {fileID: 11469182}
   m_Layer: 0
   m_Name: bulletBazooka
   m_TagString: Untagged
@@ -52,6 +53,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddb030957b76dba4e95e0ff0e74b040c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11469182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5035e59833d229e4e857e6398430744c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21281848

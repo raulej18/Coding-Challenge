@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class AttackEne : MonoBehaviour {
-	private GameObject[] bullets;
+	public GameObject[] bullets;
 
 	private bool charged;
 	private GameObject currentWeapon;
@@ -16,7 +16,6 @@ public class AttackEne : MonoBehaviour {
 
 
 	void Start(){
-		bullets = GameObject.Find ("Weapon Generator").GetComponent<Bullets> ().GetBullets ();
 
 	}
 
@@ -45,7 +44,7 @@ public class AttackEne : MonoBehaviour {
 	}
 
 	private void ControlLife(){
-		if(time<5){
+		if(time<15){
 			time+=Time.deltaTime;
 			
 			

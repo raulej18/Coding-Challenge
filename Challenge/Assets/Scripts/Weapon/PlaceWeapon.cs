@@ -26,7 +26,7 @@ public class PlaceWeapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(itIsCharged){
-			if(timeWeapon<10){
+			if(timeWeapon<15){
 				timeWeapon+=Time.deltaTime;
 
 			}
@@ -83,6 +83,7 @@ public class PlaceWeapon : MonoBehaviour {
 		else{
 			time=0;
 			GameObject b=Instantiate(bulletSelected,positionFire.position,transform.parent.rotation)as GameObject;
+			b.GetComponent<BulletDamage>().setNameBullet("Soldier");
 		}
 
 	}
